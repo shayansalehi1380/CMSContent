@@ -1,4 +1,4 @@
-Technologies used in this project :
+**Technologies used in this project :**
 
 C#
 
