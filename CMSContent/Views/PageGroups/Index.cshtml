@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CMSContent.Models.PageGroup>
+
+@{
+    ViewData["Title"] = "صفحه دسته بندی ها";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> ساخت دسته بندی جدید</a>
+</p>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="table-success">
+            <th>
+                @Html.DisplayNameFor(model => model.PageGroupTitle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageGroupTitle)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PageGroupID" class="btn btn-info"><i class="fas fa-edit"></i> ویرایش</a>
+                <a asp-action="Details" asp-route-id="@item.PageGroupID" class="btn btn-secondary"><i class="fas fa-info-circle"></i> جزئیات</a>
+                <a asp-action="Delete" asp-route-id="@item.PageGroupID" class="btn btn-danger"><i class="fas fa-trash"></i> حذف</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

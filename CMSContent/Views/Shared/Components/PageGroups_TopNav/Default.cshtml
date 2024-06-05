@@ -1,0 +1,14 @@
+﻿@model List<PageGroup>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        دسته بندی ها
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @foreach (var pageGroup in Model)
+        {
+        <a class="dropdown-item text-dark" asp-controller="Home" asp-action="ShowPages" asp-route-id="@pageGroup.PageGroupID">@pageGroup.PageGroupTitle</a>
+        }
+    </div>
+</li>
+

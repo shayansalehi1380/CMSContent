@@ -1,0 +1,24 @@
+﻿@page
+@model ResetAuthenticatorModel
+@{
+    ViewData["Title"] = "کلید احراز هویت را بازنشانی کنید";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>اگر کلید احراز هویت خود را بازنشانی کنید، برنامه احراز هویت شما تا زمانی که آن را دوباره پیکربندی نکنید، کار نخواهد کرد.</strong>
+    </p>
+    <p>
+        این فرآیند تا زمانی که برنامه احراز هویت خود را تأیید نکنید، 2FA را غیرفعال می کند.
+        اگر پیکربندی برنامه authenticator خود را کامل نکنید، ممکن است دسترسی به حساب خود را از دست بدهید.
+    </p>
+</div>
+<div>
+    <form id="reset-authenticator-form" method="post" class="form-group">
+        <button id="reset-authenticator-button" class="btn btn-danger" type="submit">کلید احراز هویت را بازنشانی کنید</button>
+    </form>
+</div>

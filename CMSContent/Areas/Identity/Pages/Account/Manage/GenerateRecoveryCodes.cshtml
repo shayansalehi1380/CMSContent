@@ -1,0 +1,27 @@
+﻿@page
+@model GenerateRecoveryCodesModel
+@{
+    ViewData["Title"] = "کدهای بازیابی احراز هویت دو مرحله ای (2FA) را ایجاد کنید";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>این کدها را در مکانی امن قرار دهید.</strong>
+    </p>
+    <p>
+        اگر دستگاه خود را گم کنید و کدهای بازیابی را نداشته باشید، دسترسی به حساب خود را از دست خواهید داد.
+    </p>
+    <p>
+        ایجاد کدهای بازیابی جدید، کلیدهای مورد استفاده در برنامه های احراز هویت را تغییر نمی دهد. اگر می خواهید کلید را تغییر دهید
+        باید در یک برنامه احراز هویت استفاده شود <a asp-page="./ResetAuthenticator">کلیدهای احراز هویت خود را بازنشانی کنید.</a>
+    </p>
+</div>
+<div>
+    <form method="post" class="form-group">
+        <button class="btn btn-danger" type="submit">ایجاد کدهای بازیابی</button>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+﻿@model List<Page>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@item.PageTitle</h5>
+                    <p class="card-text">@item.PageShortText</p>
+                    <a asp-action="ShowPage" asp-controller="Home"
+                       asp-route-id="@item.PageID" class="btn btn-primary">متن کامل خبر</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
